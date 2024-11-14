@@ -16,15 +16,15 @@ username = input("Enter your username: ")
 
 while True:
     server_addr = input("Enter server IP: ")
-    server_port = input("Enter server port: ")
+    serial_port = input("Enter serial port: ")
 
     try:
-        server_port = int(server_port)
+        serial_port = int(serial_port)
     except ValueError:
         print("\nThe port you entered was not a number, try again with a valid port...")
         continue
 
-    n = Network(server_addr, server_port, username)
+    n = Network(server_addr, serial_port, username)
     n.settimeout(5)
 
     error_occurred = False
